@@ -77,7 +77,7 @@ function Hero() {
                   </p>
                   <div className="my-12 pt-2 flex flex-row items-center gap-2 md:gap-4">
                     <Link
-                      href="/projects"
+                      href="#book-call"
                       className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 md:px-6 py-4"
                     >
                       Hire Me!

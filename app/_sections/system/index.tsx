@@ -97,7 +97,7 @@ function System() {
   interface CertificationItem {
     name: string;
     issuer: string;
-    file: string; 
+    file: string;
     type: "image" | "pdf";
   }
 
@@ -128,7 +128,7 @@ function System() {
 
   return (
     <section id="system-section" className="overflow-hidden">
-      <div className="max-w-4xl flex justify-center items-center md:ml-60 py-16">
+      <div className="max-w-4xl flex justify-center items-center mx-auto py-16">
         <div className=" bg-[#9a79b5]/5 rounded-2xl md:p-10 p-4 shadow-lg relative">
           {/* Top Tabs */}
           <div className="flex justify-center mb-10">
@@ -181,7 +181,7 @@ function System() {
       </div>
 
       <>
-        <div className="relative z-10 max-w-4xl md:ml-60 px-4 sm:px-6">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
           {/* Header */}
           <div
             className={`text-center mb-10 transition-all duration-1000 ${

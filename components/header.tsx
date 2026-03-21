@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { X, Github, FileText, Download } from "lucide-react";
+import { X, Github, FileText, Download, Linkedin } from "lucide-react";
 
 export function Header() {
   return (
@@ -18,7 +18,6 @@ export function Header() {
                 <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400/20 to-purple-900/20"></div>
               </div>
             </div>
-            
           </Link>
 
           {/* Divider */}
@@ -27,14 +26,14 @@ export function Header() {
           {/* Icons */}
           <nav className="flex items-center gap-3">
             <Link
-              href="/"
+              href="www.linkedin.com/in/isaac-winner-270ab3256"
               className="text-white/80 hover:text-white transition p-1"
               aria-label="Home"
             >
-              <X className="w-4 h-4" />
+              <Linkedin className="w-4 h-4" />
             </Link>
             <Link
-              href="https://github.com/cyberwon"
+              href="https://github.com/IsaacWinner18"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/80 hover:text-white transition p-1"
@@ -43,13 +42,13 @@ export function Header() {
               <Github className="w-4 h-4" />
             </Link>
             <Link
-              href="/blog"
+              href="/"
               className="text-white/80 hover:text-white transition p-1"
               aria-label="Blog"
             >
               <FileText className="w-4 h-4" />
             </Link>
-            <Link
+            {/* <Link
               href="/resume.pdf"
               download
               className="text-white/80 hover:text-white transition p-1 flex items-center gap-1"
@@ -57,7 +56,7 @@ export function Header() {
             >
               <span className="text-xs font-medium">Resume</span>
               <Download className="w-4 h-4" />
-            </Link>
+            </Link> */}
           </nav>
         </div>
       </div>

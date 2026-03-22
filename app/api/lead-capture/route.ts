@@ -1,13 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Client } from '@notionhq/client';
 
-interface LeadData {
-  name: string;
-  email: string;
-  whatsapp: string;
-  pageUrl?: string;
-}
-
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 export async function POST(request: Request) {
@@ -19,7 +12,7 @@ export async function POST(request: Request) {
   }
 
   try {
-      const { name, email, whatsapp, pageUrl } = await request.json();
+      const { name, email, message } = await request.json();
       
       const databaseId = process.env.NOTION_DATABASE_ID;
 if (!databaseId) {
@@ -33,37 +26,34 @@ if (!databaseId) {
             title: [
               {
                 text: {
-                  content: name
-                }
-              }
-            ]
+                  content: name,
+                },
+              },
+            ],
           },
           Email: {
-            email: email
+            email: email,
           },
-          WhatsApp: {
+          Message: {
             rich_text: [
               {
                 text: {
-                  content: whatsapp
-                }
-              }
-            ]
-          },
-          'Page URL': {
-            url: pageUrl || ''
+                  content: message,
+                },
+              },
+            ],
           },
           Status: {
             select: {
-              name: 'New Lead'
-            }
+              name: "New Lead",
+            },
           },
-          'Submitted At': {
+          "Submitted At": {
             date: {
-              start: new Date().toISOString()
-            }
-          }
-        }
+              start: new Date().toISOString(),
+            },
+          },
+        },
       });
 
       return NextResponse.json(

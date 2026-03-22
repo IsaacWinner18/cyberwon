@@ -90,14 +90,12 @@ export default function BookCall() {
                       <h3 className="text-2xl font-bold text-white mb-2">
                         Let's Talk
                       </h3>
-                      <p className="text-gray-300">
-                        Fill out the form below and I'll get back to you shortly
-                      </p>
+                     
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="md:flex md:space-x-4">
-                        <div className="md:flex-1">
+                      <div className="md:flex md:space-x-4 mb-2 w-[300px] md:w-full">
+                        <div className="md:flex-1 mb-2 md:mb-0">
                           <input
                             type="text"
                             name="name"
@@ -139,6 +137,7 @@ export default function BookCall() {
                         disabled={isSubmitting}
                         className="w-full bg-gradient-to-r from-purple-700 to-purple-600 text-white py-3 px-4  font-medium hover:from-purple-700 hover:to-purple-600 transition-all disabled:opacity-50 mt-4"
                       >
+                        
                         {isSubmitting ? "Submitting..." : "Reach Out"}
                       </button>
                     </form>
@@ -174,14 +173,14 @@ export default function BookCall() {
                         href={createWhatsAppLink()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full rounded-lg border-2 border-gray-300/50 bg-white/10 backdrop-blur-sm px-3 md:px-6 py-3  text-base sm:text-lg font-medium text-gray-700 transition-all duration-300 hover:bg-white/20 hover:scale-105 focus:ring-4 focus:ring-gray-500/50 focus:outline-none dark:border-gray-600/50 dark:bg-gray-800/10 dark:text-gray-300 dark:hover:bg-gray-800/20"
+                        className="block w-full border-2  bg-purple-600 backdrop-blur-sm px-3 md:px-6 py-3  text-base sm:text-lg font-medium text-white transition-all duration-300 hover:bg-purple/20 hover:scale-105"
                       >
                         Schedule a Call via WhatsApp
                       </a>
 
                       <button
                         onClick={() => setCurrentStep(1)}
-                        className="w-full bg-gray-100 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-200 transition-all"
+                        className="w-full bg-gray-100/10 text-gray-100 py-3 px-4 rounded-lg font-medium hover:bg-gray-200 transition-all"
                       >
                         Close
                       </button>

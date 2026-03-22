@@ -1,7 +1,9 @@
 ﻿"use client";
 
+import { DownloadCloud } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 function System() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +13,7 @@ function System() {
     type: "image" | "pdf";
     name: string;
   } | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   type SystemCard = {
     title: string;
@@ -39,6 +42,19 @@ function System() {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!overlay) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [overlay]);
 
   const skillsData: SystemCard[] = [
     {
@@ -111,16 +127,64 @@ function System() {
       title: "Cloud & Infrastructure",
       items: [
         {
-          name: "AWS Solutions Architect",
-          issuer: "Amazon Web Services",
-          file: "/certs/aws-solutions-architect.png",
+          name: "Intermediate Javascript Course",
+          issuer: "Sololearn",
+          file: "/Intermediate-js-certificate.png",
           type: "image",
         },
         {
-          name: "Google Cloud Professional",
-          issuer: "Google Cloud",
-          file: "/certs/gcp.pdf",
-          type: "pdf",
+          name: "Full Javascript Course",
+          issuer: "Sololearn",
+          file: "/js-certificate.png",
+          type: "image",
+        },
+        {
+          name: "HTML Certificattion",
+          issuer: "Sololearn",
+          file: "/html-certificate.png",
+          type: "image",
+        },
+        {
+          name: "CSS Certificattion",
+          issuer: "Sololearn",
+          file: "/Css-certificate.png",
+          type: "image",
+        },
+      ],
+    },
+    {
+      title: "Level 2",
+      items: [
+        {
+          name: "Intro to Python Certification",
+          issuer: "Sololearn",
+          file: "/introduction-to-python-certificate.png",
+          type: "image",
+        },
+        {
+          name: "Python Certificattion",
+          issuer: "Sololearn",
+          file: "/python-intermediate-certificate.png",
+          type: "image",
+        },
+        {
+          name: "PHP Course",
+          issuer: "Sololearn",
+          file: "/Php-certificate.png",
+          type: "image",
+        },
+
+        {
+          name: "Coding for Marketers",
+          issuer: "Sololearn",
+          file: "/coding-for-marketer-certificate.png",
+          type: "image",
+        },
+        {
+          name: "Responsive Web Design",
+          issuer: "Sololearn",
+          file: "/responsive-web-design-cerificate.png",
+          type: "image",
         },
       ],
     },
@@ -223,15 +287,15 @@ function System() {
                         {/* Left: cert info */}
                         <div className="flex items-start gap-3 min-w-0">
                           <span className="text-green-400 mt-1 shrink-0">
-                            ✓
+                            <DownloadCloud />
                           </span>
                           <div className="min-w-0">
                             <p className="text-white font-medium leading-tight truncate">
                               {item.name}
                             </p>
-                            <p className="text-gray-500 text-sm mt-0.5 truncate">
+                            {/* <p className="text-gray-500 text-sm mt-0.5 truncate">
                               {item.issuer}
-                            </p>
+                            </p> */}
                           </div>
                         </div>
 
@@ -269,59 +333,66 @@ function System() {
         </div>
 
         {/* Full-screen overlay */}
-        {overlay && (
-          <div
-            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-sm"
-            onClick={() => setOverlay(null)}
-          >
-            {/* Top bar */}
+        {overlay &&
+          isMounted &&
+          createPortal(
             <div
-              className="flex items-center justify-between px-6 py-4 border-b border-white/10"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <p className="text-white font-medium text-sm">{overlay.name}</p>
-              <button
-                onClick={() => setOverlay(null)}
-                className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
-                aria-label="Close"
-              >
-                <svg
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 6L6 18M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Content */}
-            <div
-              className="flex-1 overflow-auto flex items-center justify-center p-6"
+              className="fixed inset-0 z-[9999] flex flex-col bg-black/95 backdrop-blur-sm"
               onClick={() => setOverlay(null)}
+              role="dialog"
+              aria-modal="true"
             >
-              {overlay.type === "image" ? (
-                <img
-                  src={overlay.file}
-                  alt={overlay.name}
-                  className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-                  onClick={(e) => e.stopPropagation()}
-                />
-              ) : (
-                <iframe
-                  src={overlay.file}
-                  title={overlay.name}
-                  className="w-full h-full max-w-5xl rounded-lg shadow-2xl"
-                  onClick={(e) => e.stopPropagation()}
-                />
-              )}
-            </div>
-          </div>
-        )}
+              {/* Top bar */}
+              <div
+                className="flex items-center justify-between px-6 py-4 border-b border-white/10"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <p className="text-white font-medium text-sm">
+                  {overlay.name}
+                </p>
+                <button
+                  onClick={() => setOverlay(null)}
+                  className="text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
+                  aria-label="Close"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M18 6L6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Content */}
+              <div
+                className="flex-1 overflow-auto flex items-center justify-center p-6"
+                onClick={() => setOverlay(null)}
+              >
+                {overlay.type === "image" ? (
+                  <img
+                    src={overlay.file}
+                    alt={overlay.name}
+                    className="max-w-full object-contain rounded-lg shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                ) : (
+                  <iframe
+                    src={overlay.file}
+                    title={overlay.name}
+                    className="w-full h-full max-w-5xl rounded-lg shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                )}
+              </div>
+            </div>,
+            document.body,
+          )}
       </>
     </section>
   );

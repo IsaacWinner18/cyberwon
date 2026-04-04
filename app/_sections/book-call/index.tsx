@@ -180,7 +180,7 @@ export default function BookCall() {
 
                       <button
                         onClick={() => setCurrentStep(1)}
-                        className="w-full bg-gray-100/10 text-gray-100 py-3 px-4 rounded-lg font-medium hover:bg-gray-200 transition-all"
+                        className="w-full bg-gray-100/10 text-gray-100 py-3 px-4 rounded-lg font-medium hover:bg-gray-200/20 transition-all"
                       >
                         Close
                       </button>

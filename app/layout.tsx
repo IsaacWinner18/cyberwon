@@ -7,22 +7,22 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Isaac Winner | Software Developer",
+  title: "Isaac Winner | Senior Full-stack Developer",
   description:
-    "Senior software developer and conversion strategist with 5+ years experience. Building high-converting sales pages and funnels for SMEs, creators, and marketers.",
-  metadataBase: new URL("https://winmarketing.metavatechhq.com"),
+    "Senior Full-stack Developer and a seasoned Builder with 4+ years of experience. Building production-ready software products with clean UX and resilient back-end systems.",
+  metadataBase: new URL("https://cyberwon.vercel.app"),
   openGraph: {
-    title: "Turn Your Traffic Into Cash With Productized Sales Pages",
+    title: "Isaac Winner | Senior Full-stack Developer",
     description:
-      "You already have the traffic. Stop wasting it on weak pages. I build high-converting sales pages, funnels, and e-commerce stores, engineered for Nigerian SMEs, creators, and marketers.",
-    url: "https://winmarketing.metavatechhq.com",
+      "Senior Full-stack Developer and a seasoned Builder with 4+ years of experience. Building production-ready software products with clean UX and resilient back-end systems.",
+    url: "https://cyberwon.vercel.app",
     siteName: "Isaac Winner | Software Developer",
     images: [
       {
-        url: "https://res.cloudinary.com/dw30uzdxp/image/upload/v1757330251/Developer_hbmqqn.webp",
+        url: "https://res.cloudinary.com/dw30uzdxp/image/upload/v1757326846/1757326829303_zqu37j.jpg",
         width: 1200,
         height: 630,
-        alt: "Isaac Winner | Software Developer",
+        alt: "Isaac Winner | Senior Full-stack Developer",
       },
     ],
     locale: "en_US",

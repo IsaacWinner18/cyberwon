@@ -8,12 +8,10 @@ export const siteData = {
       dark: "/placeholder.svg?height=32&width=120",
     },
     social: {
-      twitter: "https://x.com/IsaacWinner12/",
+      twitter: "https://x.com/cyberwon_1",
       github: "https://github.com/IsaacWinner18",
       linkedin: "www.linkedin.com/in/isaac-winner-270ab3256",
       whatsapp: "http://wa.me/2348119188295",
     },
   },
- 
- 
 };

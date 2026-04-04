@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -26,7 +27,9 @@ function ProjectsSection() {
     {
       title: "Earnstak",
       slug: "earnstak",
-      image: "/placeholder.svg?height=260&width=460",
+      websiteUrl: "https://earnstak.com",
+      image:
+        "https://res.cloudinary.com/dcvlszzoy/image/upload/q_auto/f_auto/v1775340372/Screenshot_2026-04-04_230448_wumt7g.png",
       summary:
         "Headless payment and analytics archtecture for people that sell digital product online, Earnstak allows creators to sell on their own custom web page without any redirect",
       role: "Full-stack Development",
@@ -35,7 +38,9 @@ function ProjectsSection() {
     {
       title: "Dben Real Estate",
       slug: "dben-real-estate",
-      image: "/placeholder.svg?height=260&width=460",
+      websiteUrl: "https://dbenrealestate.com",
+      image:
+        "https://res.cloudinary.com/dcvlszzoy/image/upload/q_auto/f_auto/v1775340748/Screenshot_2026-04-04_231209_scjkvp.png",
       summary:
         "A highly modern Real Estate website, clean and minimalistic UI.",
       role: "Technical Lead",
@@ -44,7 +49,10 @@ function ProjectsSection() {
     {
       title: "Buychow",
       slug: "buychow",
-      image: "/placeholder.svg?height=260&width=460",
+      websiteUrl: "https://buychow.vercel.app",
+      gitHub: false,
+      image:
+        "https://res.cloudinary.com/dcvlszzoy/image/upload/q_auto/f_auto/v1775340849/Screenshot_2026-04-04_231353_kzppvo.png",
       summary:
         "A food delivery website, exclusively designed for the students of Achievers University (My Uni).",
       role: "Full-stack Development",
@@ -53,7 +61,9 @@ function ProjectsSection() {
     {
       title: "Moevan - Data subscription website",
       slug: "moevan-data-subscription",
-      image: "/placeholder.svg?height=260&width=460",
+      websiteUrl: "https://moevan.com",
+      image:
+        "https://res.cloudinary.com/dcvlszzoy/image/upload/q_auto/f_auto/v1775340920/Screenshot_2026-04-04_231506_o0jco6.png",
       summary: "Moevan is a data subscription and bills payment website.",
       role: "Front-end Development",
       stack: ["Next.js", "Prisma", "PostgreSQL", "Twilio"],
@@ -113,13 +123,27 @@ function ProjectsSection() {
                 </div> */}
               </div>
 
-              <div className="py-2 flex justify-center items-center bg-purple-600 w-full">
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="inline-flex items-center text-white hover:text-white/70 font-medium"
-                >
-                  View case details &#x2197;
-                </Link>
+              <div className="flex gap-3 items-center">
+                <div className="py-2 px-4 flex justify-center items-center underline text-purple-400">
+                  <Link
+                    href={`${project.websiteUrl}`}
+                    target="_blank"
+rel="noopener"
+                    className="inline-flex items-center text-md text-white hover:text-white/70 font-medium"
+                  >
+                    Visit site &#x2197;
+                  </Link>
+                </div>
+
+                {/* <div>
+                  <Image
+                    src="/github-142-svgrepo-com.svg"
+                    alt="Isaac Winner Github"
+                    width={30}
+                    height={30}
+                  />
+                  
+                </div> */}
               </div>
             </div>
           ))}

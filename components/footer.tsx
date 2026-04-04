@@ -118,7 +118,7 @@ export function Footer() {
                 Do you have an open position?
               </p>
               <Link
-                href="/lead-capture"
+                href="#book-call"
                 className="inline-flex items-center bg-gradient-to-r from-purple-700 to-purple-600 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50"
               >
                 Hire Me!

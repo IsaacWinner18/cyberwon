@@ -26,7 +26,9 @@ export function Header() {
           {/* Icons */}
           <nav className="flex items-center gap-3">
             <Link
-              href="www.linkedin.com/in/isaac-winner-270ab3256"
+              href="https://www.linkedin.com/in/isaac-winner-270ab3256"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/80 hover:text-white transition p-1"
               aria-label="Home"
             >

@@ -44,7 +44,9 @@ export function Header() {
               <Github className="w-4 h-4" />
             </Link>
             <Link
-              href="/"
+              href="https://res.cloudinary.com/dcvlszzoy/image/upload/v1775652773/isaac-winner-resume_op215f.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white/80 hover:text-white transition p-1"
               aria-label="Blog"
             >

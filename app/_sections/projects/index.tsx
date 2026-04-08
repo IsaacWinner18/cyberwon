@@ -25,6 +25,28 @@ function ProjectsSection() {
 
   const projects = [
     {
+      title: "Exam Preps",
+      slug: "exampreps",
+      websiteUrl: "https://exampreps.ng",
+      image:
+        "https://res.cloudinary.com/dcvlszzoy/image/upload/q_auto/f_auto/v1775648029/Screenshot_2026-04-08_123328_vvmjyt.png",
+      summary:
+        "A Comprehensive preparation platform for almost all major Nigerian examinations, recoreded 289 signups and 8 paying users.",
+      role: "Full-stack Development",
+      stack: ["Next.js", "Node.js", "Paystack", "MongoDB"],
+    },
+    {
+      title: "Igiftways",
+      slug: "igiftways",
+      websiteUrl: "https://igiftways.com",
+      image:
+        "https://res.cloudinary.com/dcvlszzoy/image/upload/q_auto/f_auto/v1775653217/Screenshot_2026-04-08_135959_ko3hvj.png",
+      summary:
+        "An idea developed out of the need for an infrastructure that empower communities with provably fair giveaways, Building lasting trust through transparent selection processes that eliminate doubt.",
+      role: "Full-stack Development",
+      stack: ["Next.js", "Node.js", "Paystack", "MongoDB"],
+    },
+    {
       title: "Earnstak",
       slug: "earnstak",
       websiteUrl: "https://earnstak.com",

@@ -71,12 +71,12 @@ function ProjectsSection() {
     {
       title: "Buychow",
       slug: "buychow",
-      websiteUrl: "https://buychow.vercel.app",
+      websiteUrl: "https://buychowng.vercel.app",
       gitHub: false,
       image:
-        "https://res.cloudinary.com/dcvlszzoy/image/upload/q_auto/f_auto/v1775340849/Screenshot_2026-04-04_231353_kzppvo.png",
+        "https://res.cloudinary.com/dcvlszzoy/image/upload/v1778334695/Screenshot_2026-05-09_144304_n36rfa.png",
       summary:
-        "A food delivery website, exclusively designed for the students of Achievers University (My Uni).",
+        "Built the standard food delivery web app, exclusively designed for Enugu state, and possible expansion to other southeast regions.",
       role: "Full-stack Development",
       stack: ["React", "Node.js", "Redis", "PostgreSQL"],
     },
